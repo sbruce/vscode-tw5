@@ -1,0 +1,67 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "tiddlywiki5",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.command.tw5",
+				"match": "\\b(action(-[a-z]+)?|set|button|return|reveal|keyboard|edit-text)\\b"
+            },
+            {
+                "begin": "^(\\S+):\\s*",
+                "beginCaptures": {
+                    "1": {
+                        "name": "keyword.command.tw5"
+                    }
+                },
+                "end": "\\n",
+                "name": "keyword.tw5",
+                "patterns": [
+                    {
+                        "match": "(\\S*)$",
+                        "name": "variable.parameter"
+                    }
+                ]
+            },
+            {
+                "begin": "^(\\\\)(define)\\s+",
+                "beginCaptures": {
+                    "2": {
+                        "name": "keyword.command.tw5"
+                    }
+                },
+                "patterns": [
+                    {
+                        "match": "addCard",
+                        "name": "variable.parameter"
+                    }
+                ],
+                "end": "\\(\\)"
+            },
+            {
+                "match": "\\\\end",
+                "name": "keyword.command.tw5"
+            }]
+		},
+		"strings": {
+			"name": "string.quoted.double.tw5",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.tw5",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.tw5"
+}

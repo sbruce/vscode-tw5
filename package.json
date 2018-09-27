@@ -1,0 +1,26 @@
+{
+    "name": "tiddlywiki5",
+    "displayName": "tiddlywiki5",
+    "description": "TiddlyWiki5 Syntax Highlighter",
+    "version": "0.0.1",
+    "publisher": "none",
+    "engines": {
+        "vscode": "^1.27.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "tw5",
+            "aliases": ["tiddlywiki5", "tw5"],
+            "extensions": [".tid"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "tw5",
+            "scopeName": "source.tw5",
+            "path": "./syntaxes/tw5.tmLanguage.json"
+        }]
+    }
+}
