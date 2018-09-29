@@ -48,6 +48,9 @@
             }
         },
         {
+            "include": "text.html.basic#tags-valid"
+        },
+        {
             "include": "#keywords"
         },
         {
